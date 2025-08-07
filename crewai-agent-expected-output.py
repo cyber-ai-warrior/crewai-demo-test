@@ -3,6 +3,7 @@ from crewai import Agent, Task, Crew, LLM
 from dotenv import load_dotenv
 
 load_dotenv()
+os.makedirs('output', exist_ok=True)
 
 MODEL=os.getenv("MODEL")
 GROQ_API_KEY=os.getenv("GROQ_API_KEY")

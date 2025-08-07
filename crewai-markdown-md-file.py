@@ -43,7 +43,8 @@ task1 = Task(
     ),
     expected_output="A list of {number_of_questions} well-structured and diverse questions on {subject} designed for {level} learners. Each question should be clearly stated and educationally valuable.",
     agent=question_designer,
-    output_file=os.path.join(os.getcwd(), "output", "{subject}.txt")
+    output_file=os.path.join(os.getcwd(), "output", "{subject}.md"),
+    markdown=True
 )
 
 task2 = Task(
@@ -53,7 +54,7 @@ task2 = Task(
     expected_output='A list of answers to the provided questions in {subject}, optionally including explanations where necessary.',
     agent=answering_expert,
     context=[task1],
-    output_file=os.path.join(os.getcwd(), "output", "{subject}_answer.txt")
+    output_file=os.path.join(os.getcwd(), "output", "{subject}_answer.md")
 )
 
 # Instantiate your crew with a sequential process
