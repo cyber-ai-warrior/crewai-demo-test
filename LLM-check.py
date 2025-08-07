@@ -1,10 +1,11 @@
 import os
 from crewai import LLM
+from dotenv import load_dotenv
 
+load_dotenv()
 
-MODEL="groq/llama3-70b-8192"
-GROQ_API_KEY="gsk..."
-
+MODEL=os.getenv("MODEL")
+GROQ_API_KEY=os.getenv("GROQ_API_KEY")
 
 llm = LLM(model=MODEL,
           temperature=0,
@@ -12,5 +13,5 @@ llm = LLM(model=MODEL,
           stream=True
           )
 
-response = llama3.call("Give me 5 question related to crewai.")
+response = llm.call("Give me 5 question related to crewai.")
 print(response)
