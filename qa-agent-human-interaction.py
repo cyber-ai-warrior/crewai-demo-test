@@ -42,6 +42,7 @@ task1 = Task(
     ),
     expected_output="A list of {number_of_questions} well-structured and diverse questions on {subject} designed for {level} learners. Each question should be clearly stated and educationally valuable.",
     agent=question_designer,
+    human_input=True,
     output_file=os.path.join(os.getcwd(), "output", "{subject}.txt")
 )
 
